@@ -74,5 +74,16 @@ public class EquipamentoEletricoM extends EquipamentosM{
         this.potencia = this.corrente * this.alimentacao;
         return this.potencia;
     }
+
+    public void imprimir_todos_dados_eletricos(){
+        System.out.println("Codigo                      : " + getCodigo());
+        System.out.println("Fabricante                  : " + getFabricante());
+        System.out.println("Nome                        : " + getNome());
+        System.out.println("Fornecedor                  : " + getFornecedorM().getNome());
+        System.out.println("Alimentação (V)             : " + alimentacao);
+        System.out.println("Corrente (A)                : " + corrente);
+        System.out.println("Potência (W)                : " + potencia);
+        System.out.println("Tipo de Fonte               : " + tipo_fonte);
+    }
     
 }

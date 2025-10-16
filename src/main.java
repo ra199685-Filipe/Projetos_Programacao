@@ -1,4 +1,5 @@
 
+import Controlador.EquipamentoC;
 import Modelo.DadosFinanceirosM;
 import Modelo.EnderecoM;
 import Modelo.EquipamentoEletricoM;
@@ -18,12 +19,21 @@ public class main {
          fornecedor1, true, "Óleo", 1500, 300.0f, 0.5f, 
         450.0f, 85.0f);
         
+        EquipamentoC controlador = new EquipamentoC();
+        controlador.Adiciona_equipamento_Eletrico(equipamento1);
+        controlador.Adiciona_equipamento_Mecanico(equipamento2);
+        controlador.imprimir_todos_dados();
+        System.out.println("Total de Equipamentos: " + controlador.contagem_dados());
         System.out.println("CALCULO PORTENCIA");
         System.out.println("P1:"+ equipamento1.calcular_potencia(equipamento1)+"W");
         System.out.println("P2:"+ equipamento1.calcular_potencia()+"W");
         System.out.println("CALCULO VAZAO");
         System.out.println("Qt: "+ equipamento2.calcula_Vazao_teorica()+"L/s");
         System.out.println("Qr: "+ equipamento2.calcula_Vazao_real()+"L/s");
+        controlador.Busca_por_campo(1);
+        controlador.Remove_por_campo(1);
+        controlador.imprimir_todos_dados();
+        System.out.println("Total de Equipamentos: " + controlador.contagem_dados());
        
     }
 }

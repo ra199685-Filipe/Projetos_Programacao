@@ -83,4 +83,18 @@ public class EquipamentoMecanicoM extends EquipamentosM {
         this.vazao_real= this.vazao_teorica * (this.eficiencia_volumetrica/100);
         return this.vazao_real; 
     }
+
+    public void imprimir_todos_dados_mecanicos(){
+        System.out.println("Codigo                      : " + this.getCodigo());
+        System.out.println("Fabricante                  : " + this.getFabricante());
+        System.out.println("Nome                        : " + this.getNome());
+        System.out.println("Fornecedor                  : " + this.getFornecedorM().getNome());
+        System.out.println("Fluido                      : " + (this.fluido ? "Sim" : "Não"));
+        System.out.println("Tipo de Fluido              : " + this.tipoFluido);
+        System.out.println("RPM                         : " + this.rpm);
+        System.out.println("Vazão Real                  : " + this.vazao_real);
+        System.out.println("Deslocamento Volumétrico    : " + this.deslocamento_volumetrico);
+        System.out.println("Vazão Teórica               : " + this.vazao_teorica);
+        System.out.println("Eficiência Volumétrica      : " + this.eficiencia_volumetrica);
+    }
 }
